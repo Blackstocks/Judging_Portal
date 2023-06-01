@@ -1,0 +1,33 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="top col-10">
+    <h2>Leaderboard</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="{% static 'images/profile.jpeg' %}">
+            <h4 style="">Startup</h4>
+            <p>Score: 30</p>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/profile.jpeg' %}">
+            <h4 style="">Startup</h4>
+            <p>Score: 30</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/profile.jpeg' %}">
+            <h4 style="">Startup</h4>
+            <p>Score: 30</p>
+        </div>
+    </div>
+</div>
+<div class="middle col-10">
+    <div class='search'>
+        
+    </div>
+</div>
+
+{% endblock content %}

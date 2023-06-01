@@ -13,5 +13,5 @@ def is_judge(user):
     return user.is_authenticated and user.is_judge
 
 def judge_required(view_func):
-    decorated_view_func = user_passes_test(is_judge, login_url='login')
+    decorated_view_func = user_passes_test(is_judge, login_url='judge_login')
     return decorated_view_func(view_func)

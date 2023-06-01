@@ -2,23 +2,176 @@
 {% load static %}
 
 {% block content %}
-    <div class="top">
-        <img src="{% static 'images/ecell-logo.png' %}"></img>
+    <div class="top col-12">
+        <img src="{% static 'images/ecell-logo-mobile-black.png' %}" id="logo" ></img>
+        <h2>Judging Portal</h2>
+        <img src="{% static 'images/profile.jpeg' %}" id="profile"></img>
     </div>
     <div class="middle">
-        <div class="left">
-            
+        <div class="left col-6">
+            <div class="box">
+                <p>Content</p>
+            </div>
+            <div class="bottom">
+                <button class='button'>
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                    Prev
+                </button>
+                <button class='button'>Next
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </button>
+            </div>
         </div>
-        <div class="right">
+        <div class="right col-5">
+            <div class="box">
+                <h2>Juding Parameters</h2>
+                <ul>
+                    <li>
+                        <h3>Judging parameter 1</h3>
+                        <div class="scale-rating">
+                            <label for="rating1">
+                              <input type="radio" id="rating1" name="rating" value="1">
+                              <span class="box">1</span>
+                            </label>
+                            <label for="rating2">
+                              <input type="radio" id="rating2" name="rating" value="2">
+                              <span class="box">2</span>
+                            </label>
+                            <label for="rating3">
+                                <input type="radio" id="rating3" name="rating" value="3">
+                                <span class="box">3</span>
+                            </label>
+                            <label for="rating4">
+                                <input type="radio" id="rating4" name="rating" value="4">
+                                <span class="box">4</span>
+                            </label>
+                            <label for="rating5">
+                                <input type="radio" id="rating5" name="rating" value="5">
+                                <span class="box">5</span>
+                            </label>
+                            <label for="rating6">
+                                <input type="radio" id="rating6" name="rating" value="6">
+                                <span class="box">6</span>
+                            </label>
+                            <label for="rating7">
+                                <input type="radio" id="rating7" name="rating" value="7">
+                                <span class="box">7</span>
+                            </label>
+                            <label for="rating8">
+                                <input type="radio" id="rating5" name="rating" value="8">
+                                <span class="box">8</span>
+                            </label>
+                            <label for="rating9">
+                                <input type="radio" id="rating9" name="rating" value="9">
+                                <span class="box">9</span>
+                            </label>
+                            <label for="rating10">
+                                <input type="radio" id="rating10" name="rating" value="10">
+                                <span class="box">10</span>
+                            </label>
+                          </div>                          
+                    </li>
 
+                    <li>
+                        <h3>Judging parameter 2</h3>
+                        <div class="scale-rating">
+                            <label for="rating1">
+                              <input type="radio" id="rating1" name="rating" value="1">
+                              <span class="box">1</span>
+                            </label>
+                            <label for="rating2">
+                              <input type="radio" id="rating2" name="rating" value="2">
+                              <span class="box">2</span>
+                            </label>
+                            <label for="rating3">
+                                <input type="radio" id="rating3" name="rating" value="3">
+                                <span class="box">3</span>
+                            </label>
+                            <label for="rating4">
+                                <input type="radio" id="rating4" name="rating" value="4">
+                                <span class="box">4</span>
+                            </label>
+                            <label for="rating5">
+                                <input type="radio" id="rating5" name="rating" value="5">
+                                <span class="box">5</span>
+                            </label>
+                            <label for="rating6">
+                                <input type="radio" id="rating6" name="rating" value="6">
+                                <span class="box">6</span>
+                            </label>
+                            <label for="rating7">
+                                <input type="radio" id="rating7" name="rating" value="7">
+                                <span class="box">7</span>
+                            </label>
+                            <label for="rating8">
+                                <input type="radio" id="rating5" name="rating" value="8">
+                                <span class="box">8</span>
+                            </label>
+                            <label for="rating9">
+                                <input type="radio" id="rating9" name="rating" value="9">
+                                <span class="box">9</span>
+                            </label>
+                            <label for="rating10">
+                                <input type="radio" id="rating10" name="rating" value="10">
+                                <span class="box">10</span>
+                            </label>
+                          </div>                          
+                    </li>
+                    <li>
+                        <h3>Judging parameter 3</h3>
+                        <div class="scale-rating">
+                            <label for="rating1">
+                              <input type="radio" id="rating1" name="rating" value="1">
+                              <span class="box">1</span>
+                            </label>
+                            <label for="rating2">
+                              <input type="radio" id="rating2" name="rating" value="2">
+                              <span class="box">2</span>
+                            </label>
+                            <label for="rating3">
+                                <input type="radio" id="rating3" name="rating" value="3">
+                                <span class="box">3</span>
+                            </label>
+                            <label for="rating4">
+                                <input type="radio" id="rating4" name="rating" value="4">
+                                <span class="box">4</span>
+                            </label>
+                            <label for="rating5">
+                                <input type="radio" id="rating5" name="rating" value="5">
+                                <span class="box">5</span>
+                            </label>
+                            <label for="rating6">
+                                <input type="radio" id="rating6" name="rating" value="6">
+                                <span class="box">6</span>
+                            </label>
+                            <label for="rating7">
+                                <input type="radio" id="rating7" name="rating" value="7">
+                                <span class="box">7</span>
+                            </label>
+                            <label for="rating8">
+                                <input type="radio" id="rating5" name="rating" value="8">
+                                <span class="box">8</span>
+                            </label>
+                            <label for="rating9">
+                                <input type="radio" id="rating9" name="rating" value="9">
+                                <span class="box">9</span>
+                            </label>
+                            <label for="rating10">
+                                <input type="radio" id="rating10" name="rating" value="10">
+                                <span class="box">10</span>
+                            </label>
+                          </div>                          
+                    </li>
+                </ul>
+            </div>
+            <div class=bottom>
+                <button class="reset">Reset</button>
+                <button class="submit" type="submit">Submit</button>
+            </div>
         </div>
     </div>
-    <style>
-        .top{
-            height: 10%;
-        }
-        .top img{
-            height: 10vh;
-        }
-    </style>
 {% endblock content %}

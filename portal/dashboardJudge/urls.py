@@ -11,6 +11,7 @@ from customUser.decorators import unauthenticated_user, judge_required
 urlpatterns = [
     path('dashboard/', views.dashboard, name="judge_dashboard"),
     path('judging', views.judge, name='judge_judge'),
+    path('leaderboard', views.leaderboard, name='judge_leaderboard'),
 
     path('register/', user_views.register, name='judge_register'),
     path('verify/', unauthenticated_user(user_views.VerifyOTP), name='judge_verify'),

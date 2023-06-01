@@ -12,3 +12,8 @@ def dashboard(request):
 def judge(request):
     return render(request, 'dashboardJudge/judging.html')
 
+@judge_required
+@login_required
+def leaderboard(request):
+    return render(request, 'dashboardJudge/leaderboard.html')
+

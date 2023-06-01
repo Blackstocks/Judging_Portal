@@ -8,7 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% if  'dashboard' in request.path %} <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> {% endif %}
+
+    {% if  'judging' in request.path %} <link rel="stylesheet" href="{% static 'css/judging.css' %}"> {% endif %}
+
+    {% if  'leaderboard' in request.path %} <link rel="stylesheet" href="{% static 'css/leaderboard.css' %}"> {% endif %}
 
     <!-- Hint CSS -->
     <link rel="stylesheet" href="{% static 'css/hint.base.css' %}" />
@@ -43,7 +50,9 @@
                                 gavel
                             </span>
                             <span class="linktxt">Judging Portal</span></a></li>
-                        <li><a href="" aria-label="Leaderboard">
+                        <li><a href="{% url 'judge_leaderboard' %}" {% url 'judge_leaderboard' as url %}
+                            {% if request.path == url %} class="active" {% endif %}
+                            aria-label="Leaderboard">
                             <span class="material-symbols-outlined">
                                 leaderboard
                             </span>
