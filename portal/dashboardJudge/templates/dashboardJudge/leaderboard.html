@@ -5,11 +5,18 @@
 
 <div class="top col-10">
     <h2>Leaderboard</h2>
-    <div class="cards">
+    {% comment %} <div class="cards">
         <div class="card">
             <img src="{% static 'images/profile.jpeg' %}">
             <h4 style="">Startup</h4>
-            <p>Score: 30</p>
+            <ul>
+                <li>
+                    Rank: 1
+                </li>
+                <li>
+                    Score: 30
+                </li>
+            </ul>
         </div>
 
         <div class="card">
@@ -22,12 +29,122 @@
             <h4 style="">Startup</h4>
             <p>Score: 30</p>
         </div>
-    </div>
+    </div> {% endcomment %}
 </div>
 <div class="middle col-10">
     <div class='search'>
-        
     </div>
+    <table>
+            <caption></caption>
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Startup Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="rank">4</td>
+                <td data-label="startup">Startup 1</td>
+                <td data-label="score">28</td>
+                <td data-label="time">5Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">5</td>
+                <td scope="row" data-label="startup">Startup 2</td>
+                <td data-label="score">27</td>
+                <td data-label="time">6Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">6</td>
+                <td scope="row" data-label="startup">Startup 3</td>
+                <td data-label="score">27</td>
+                <td data-label="time">8Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">7</td>
+                <td scope="row" data-label="startup">Startup</td>
+                <td data-label="score">26</td>
+                <td data-label="time">4Min</td>
+              </tr>
+
+
+              <tr>
+                <td data-label="rank">4</td>
+                <td data-label="startup">Startup 1</td>
+                <td data-label="score">28</td>
+                <td data-label="time">5Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">5</td>
+                <td scope="row" data-label="startup">Startup 2</td>
+                <td data-label="score">27</td>
+                <td data-label="time">6Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">6</td>
+                <td scope="row" data-label="startup">Startup 3</td>
+                <td data-label="score">27</td>
+                <td data-label="time">8Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">7</td>
+                <td scope="row" data-label="startup">Startup</td>
+                <td data-label="score">26</td>
+                <td data-label="time">4Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">4</td>
+                <td data-label="startup">Startup 1</td>
+                <td data-label="score">28</td>
+                <td data-label="time">5Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">5</td>
+                <td scope="row" data-label="startup">Startup 2</td>
+                <td data-label="score">27</td>
+                <td data-label="time">6Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">6</td>
+                <td scope="row" data-label="startup">Startup 3</td>
+                <td data-label="score">27</td>
+                <td data-label="time">8Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">7</td>
+                <td scope="row" data-label="startup">Startup</td>
+                <td data-label="score">26</td>
+                <td data-label="time">4Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">4</td>
+                <td data-label="startup">Startup 1</td>
+                <td data-label="score">28</td>
+                <td data-label="time">5Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">5</td>
+                <td scope="row" data-label="startup">Startup 2</td>
+                <td data-label="score">27</td>
+                <td data-label="time">6Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">6</td>
+                <td scope="row" data-label="startup">Startup 3</td>
+                <td data-label="score">27</td>
+                <td data-label="time">8Min</td>
+              </tr>
+              <tr>
+                <td data-label="rank">7</td>
+                <td scope="row" data-label="startup">Startup</td>
+                <td data-label="score">26</td>
+                <td data-label="time">4Min</td>
+              </tr>
+            </tbody>
+    </table>
 </div>
 
 {% endblock content %}

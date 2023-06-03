@@ -21,8 +21,8 @@
 
 .main .top #profile{
     margin: 0.5rem;
-    height: 6rem;
-    width: 6rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 100%;
     padding: 2px;
     border: 2px solid #00000025;
@@ -55,15 +55,22 @@
 }
 
 .main .middle .left .bottom{
+    width: 90%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 15%;
     gap: 6vw;
 }
 
+.main .middle .left .bottom > span{
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    margin-left: 16.66%;
+}
 
-.main .middle .left .bottom > button{
+.main .middle .left .bottom  button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -78,8 +85,17 @@
     box-shadow: none;
 }
 
-.main .middle .left .bottom > button:hover{
+.main .middle .left .bottom  button:hover{
     transform: scale(0.95);
+}
+
+.main .middle #contentBox:fullscreen{
+    background-color: #dadada;
+    color: black;
+}
+
+.main .middle .left .bottom #preview{
+    margin-right: 0;
 }
 
 .main .middle .right{
@@ -88,7 +104,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 2vh;
+    gap: 1vh;
+}
+
+.main .middle .right h2{
+    padding: 0;
+    margin: 0;
 }
 
 .main .middle .right .box{
@@ -113,11 +134,13 @@
 }
 
 .main .middle .right .bottom{
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 15%;
-    gap: 6vw;
+    /* gap: 1vw; */
+    padding: 0 2rem;
 }
 
 .main .middle .right .bottom button{
@@ -162,6 +185,24 @@
 .main .middle .right .bottom button:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+.main .middle .right .bottom .disabled{
+    display: none;
+}
+
+.main .middle .right .bottom .pagination{
+    min-width: 2.2rem;
+    min-height: 2.2rem;
+    padding: 0;
+    border-radius: 100%;
+}
+
+.main .middle .right .bottom .nav{
+    min-width: 2.6rem;
+    min-height: 2.6rem;
+    padding: 0;
+    border-radius: 1rem;
 }
 
 .scale-rating {

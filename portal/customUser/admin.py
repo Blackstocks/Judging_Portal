@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import customUser, participant
+from .models import customUser, participant, judge
 
 class CustomUserAdmin(UserAdmin):
     fieldsets = list(UserAdmin.fieldsets)
@@ -13,10 +13,11 @@ class CustomUserAdmin(UserAdmin):
 
     list_display = ('username','first_name', 'last_name', 'is_judge', 'email')
 
+admin.site.register(participant)
+
+admin.site.register(judge)
 
 admin.site.register(customUser, CustomUserAdmin)
-
-admin.site.register(participant)
 
 
 # from django.contrib import admin
