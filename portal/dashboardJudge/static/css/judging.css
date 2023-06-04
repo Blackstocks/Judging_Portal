@@ -51,7 +51,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85%;
+    height: 100%;
+    width: 100%;
+}
+
+.main .middle .left .box iframe{
+    border-radius: 10px;
+}
+
+#presentationContainer {
+    width: 100%;
+    height: 100%;
 }
 
 .main .middle .left .bottom{
@@ -70,7 +80,7 @@
     margin-left: 16.66%;
 }
 
-.main .middle .left .bottom  button {
+.main .middle .left  button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,7 +95,7 @@
     box-shadow: none;
 }
 
-.main .middle .left .bottom  button:hover{
+.main .middle .left  button:hover{
     transform: scale(0.95);
 }
 
@@ -94,8 +104,19 @@
     color: black;
 }
 
-.main .middle .left .bottom #preview{
+.main .middle #contentBox:fullscreen #preview{
+    top: 90%;
+    left: 95%;
+}
+
+.main .middle .left #preview{
+    position: absolute;
     margin-right: 0;
+    top: 85%;
+    left: 62%;
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
 
 .main .middle .right{
@@ -205,6 +226,11 @@
     border-radius: 1rem;
 }
 
+.main .middle .right .bottom .page{
+    background-color: black;
+    color: white;
+}
+/* 
 .scale-rating {
     display: flex;
   }
@@ -239,6 +265,41 @@
     background-color: black;
     color: #fff;
   }
+ */
+
+ .slider {
+    width: 90%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    }
+    .slider p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-left: 30px;
+    color: black;
+    width: 2rem;
+    }
+    .slider input[type="range"] {
+    -webkit-appearance:none !important;
+    width: 420px;
+    height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+    }
+    .slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 25px;
+    height:25px;
+    background: black;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    .slider input[type="range"]::-webkit-slider-thumb:hover {
+    background: black;
+    }
 
   @media (max-width:980px) {
 

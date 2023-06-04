@@ -30,7 +30,11 @@ function prev(){
 }
 
 function pageOne(){
-    
+
+    paginationBtns[0].classList.add("page");
+    paginationBtns[1].classList.remove("page");
+    paginationBtns[2].classList.remove("page");
+
     for (let i = 0; i < 3; i++) {
         parameters[i].style.display = "block"
     }
@@ -47,9 +51,14 @@ function pageOne(){
         paginationBtns[i].style.display = "block"
     }
     page = 1
+
 }
 
 function pageTwo(){
+
+    paginationBtns[0].classList.remove("page");
+    paginationBtns[1].classList.add("page");
+    paginationBtns[2].classList.remove("page");
     
     for (let i = 0; i < 3; i++) {
         parameters[i].style.display = "none"
@@ -67,9 +76,14 @@ function pageTwo(){
         paginationBtns[i].style.display = "block"
     }
     page = 2
+
 }
 
 function pageThree(){
+
+    paginationBtns[0].classList.remove("page");
+    paginationBtns[1].classList.remove("page");
+    paginationBtns[2].classList.add("page");
     
     for (let i = 0; i < 3; i++) {
         parameters[i].style.display = "none"
@@ -87,4 +101,5 @@ function pageThree(){
         paginationBtns[i].style.display = "none"
     }
     page = 3
+
 }
