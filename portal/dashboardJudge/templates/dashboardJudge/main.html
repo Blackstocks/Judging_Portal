@@ -35,8 +35,8 @@
                         chevron_right
                     </span>
                 </button>
-                <img id="logo-mobile" src="../../static/images/ecell-logo-mobile.png">
-                <img id="logo" src="../../static/images/ecell-logo-white.png" alt="ECell IIT Kharagpur">
+                <img id="logo-mobile" src="{% static 'images/ecell-logo-mobile.png' %}">
+                <img id="logo" src="{% static 'images/ecell-logo-white.png' %}" alt="ECell IIT Kharagpur">
             </div>
             <div class="middle">
                 <nav>
@@ -46,13 +46,18 @@
                             aria-label="Dashboard">
                             <span class="material-symbols-outlined">team_dashboard</span>
                             <span class="linktxt">Dashboard</span></a></li>
-                        <li><a href="{% url 'judge_judge' %}" {% url 'judge_judge' as url %}
-                            {% if request.path == url %} class="active"{% endif %}
+                        <li>
+                            <a href="{% url 'judge_judge' participant_username='participant1' %}" 
+                            {% if 'judging' in request.path %}
+                                class="active"
+                            {% endif %} 
                             aria-label="Judging Portal">
                             <span class="material-symbols-outlined">
                                 gavel
                             </span>
-                            <span class="linktxt">Judging Portal</span></a></li>
+                            <span class="linktxt">Judging Portal</span>
+                            </a>
+                        </li>
                         <li><a href="{% url 'judge_leaderboard' %}" {% url 'judge_leaderboard' as url %}
                             {% if request.path == url %} class="active" {% endif %}
                             aria-label="Leaderboard">
@@ -79,8 +84,8 @@
             {% block content %}{% endblock  %}
         </div>
 </body>
-<script src="../../static/js/hamburger.js"></script>
-<script src="../../static/js/mobileprofile.js"></script>
+<script src="{% static 'js/hamburger.js' %}"></script>
+<script src="{% static 'js/mobileprofile.js' %}"></script>
 <script src="{% static 'js/fullscreen.js' %}"></script>
 <script src="{% static 'js/pagination.js' %}"></script>
 </html>

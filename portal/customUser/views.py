@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from .forms import UserRegistrationForm
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import customUser
+from .models import CustomUser
 from .decorators import unauthenticated_user, judge_required
 from django.contrib.auth.hashers import make_password
 import random
@@ -22,12 +22,12 @@ def VerifyOTP(request):
         password2=request.POST.get('password2')
         if password1 == password2:
             hashed_password = make_password(password1)
-            user = customUser.objects.create_user(
+            user = CustomUser.objects.create_user(
                 username=username,
                 first_name=first_name,
                 last_name=last_name,
                 email=email,
-                password=password1,
+                password=hashed_password,
                 is_judge = True,
             )
     return JsonResponse({'data' : 'success'}, status = 200)

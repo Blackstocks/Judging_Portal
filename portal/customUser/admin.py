@@ -1,6 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import customUser, participant, judge
+from .models import CustomUser, Participant, Judge
+import os
+from django.conf import settings
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
 
 class CustomUserAdmin(UserAdmin):
     fieldsets = list(UserAdmin.fieldsets)
@@ -13,22 +18,8 @@ class CustomUserAdmin(UserAdmin):
 
     list_display = ('username','first_name', 'last_name', 'is_judge', 'email')
 
-admin.site.register(participant)
+admin.site.register(Participant)
 
-admin.site.register(judge)
+admin.site.register(Judge)
 
-admin.site.register(customUser, CustomUserAdmin)
-
-
-# from django.contrib import admin
-# from django.contrib.auth.admin import UserAdmin
-# from .models import customUser
-
-# fields = list(UserAdmin.fieldsets)
-# fields[0] = (None, {'fields': ('username', 'password', 'is_judge', 'is_particpant')})
-# UserAdmin.fieldsets = tuple(fields)
-# filter = list(UserAdmin.list_filter)
-# filter[3] = (None, {'Filter ': ('is_judge', 'is_participant')})
-# UserAdmin.list_filter = tuple(filter)
-
-# admin.site.register(customUser, UserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)
