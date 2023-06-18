@@ -17,6 +17,8 @@
 
     {% if  'leaderboard' in request.path %} <link rel="stylesheet" href="{% static 'css/leaderboard.css' %}"> {% endif %}
 
+    {% if  'participants' in request.path %} <link rel="stylesheet" href="{% static 'css/participants.css' %}"> {% endif %}
+
     <!-- Hint CSS -->
     <link rel="stylesheet" href="{% static 'css/hint.base.css' %}" />
 
@@ -46,8 +48,16 @@
                             aria-label="Dashboard">
                             <span class="material-symbols-outlined">team_dashboard</span>
                             <span class="linktxt">Dashboard</span></a></li>
+                        <li><a href="{% url 'judge_participants' %}" {% url 'judge_participants' as url %}
+                                {% if request.path == url %} class="active" {% endif %}
+                                aria-label="Participants">
+                                <span class="material-symbols-outlined">
+                                    groups
+                                </span>
+                                <span class="linktxt">Participants</span></a>
+                        </li>
                         <li>
-                            <a href="{% url 'judge_judge' participant_username='participant1' %}" 
+                            <a href="{% url 'judge_judge' participant_username='choose_participant' %}" 
                             {% if 'judging' in request.path %}
                                 class="active"
                             {% endif %} 
@@ -65,11 +75,6 @@
                                 leaderboard
                             </span>
                             <span class="linktxt">Leaderboard</span></a></li>
-                        <li><a href="" aria-label="Participants">
-                            <span class="material-symbols-outlined">
-                                groups
-                            </span>
-                            <span class="linktxt">Participants</span></a></li>
                         <li><a href="{% url 'logout' %}?next={% url 'home' %}" aria-label="Log out">
                             <span class="material-symbols-outlined">logout</span>
                             <span class="linktxt">Log out</span></a></li>
@@ -86,7 +91,9 @@
 </body>
 <script src="{% static 'js/hamburger.js' %}"></script>
 <script src="{% static 'js/mobileprofile.js' %}"></script>
-<script src="{% static 'js/fullscreen.js' %}"></script>
-<script src="{% static 'js/pagination.js' %}"></script>
+{% if  'judging' in request.path %} 
+    <script src="{% static 'js/fullscreen.js' %}"></script>
+    <script src="{% static 'js/pagination.js' %}"></script>
+{% endif %}
 </html>
 {% endif %}

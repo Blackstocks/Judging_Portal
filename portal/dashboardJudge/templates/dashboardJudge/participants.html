@@ -1,0 +1,29 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="top col-11">
+        <h1>Participants</h1>
+        <div>
+            <input type="search" id="search">
+        </div>
+        {% comment %} {% messages %} {% endcomment %}
+    </div>
+
+    <div class="container col-11">
+        <div class="cards">
+            {% for user in users %}
+                <div class="card">
+                    <h3>{{ user.username }}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                    <div class="buttons">
+                        <a href="{% url 'judge_judge' participant_username=user.username %}">Judge</a>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock content %}

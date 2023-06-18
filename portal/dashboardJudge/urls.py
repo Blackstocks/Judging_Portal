@@ -14,6 +14,7 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name="judge_dashboard"),
     path('judging/<str:participant_username>/', views.judge, name='judge_judge'),
     path('leaderboard', views.leaderboard, name='judge_leaderboard'),
+    path('participants', views.participants, name='judge_participants'),
 
     path('register/', user_views.register, name='judge_register'),
     path('verify/', unauthenticated_user(user_views.VerifyOTP), name='judge_verify'),
