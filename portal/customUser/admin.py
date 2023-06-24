@@ -18,7 +18,12 @@ class CustomUserAdmin(UserAdmin):
 
     list_display = ('username','first_name', 'last_name', 'is_judge', 'email')
 
-admin.site.register(Participant)
+class ParticipantAdmin(admin.ModelAdmin):
+    list_display = ('user', 'total_score', 'rank')
+    list_filter = ('rank',)
+    ordering = ('rank',)
+
+admin.site.register(Participant, ParticipantAdmin)
 
 admin.site.register(Judge)
 

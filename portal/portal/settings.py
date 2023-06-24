@@ -133,8 +133,6 @@ AUTH_USER_MODEL = 'customUser.CustomUser'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL = 'home'
-
 TIME_ZONE = 'Asia/Kolkata'
 
 EMAIL_USE_TLS = True

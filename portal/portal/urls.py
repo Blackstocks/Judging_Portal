@@ -12,6 +12,7 @@ urlpatterns = [
     path('', user_views.home, name='home'),
     
     path('judge/', include('dashboardJudge.urls'), name="judge"),
+    path('participant/', include('dashboardParticipant.urls'), name="participant"),
 
     path('logout/', auth_views.LogoutView.as_view(template_name='customUser/mainpage.html'), name='logout'),
     

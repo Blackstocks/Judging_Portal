@@ -1,0 +1,77 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="top col-12">
+        <img src="{% static 'images/ecell-logo-mobile-black.png' %}" id="logo" ></img>
+        <h2>Judging Portal</h2>
+        <img src="{% static 'images/profile.jpeg' %}" id="profile"></img>
+    </div>
+    <div class="middle">
+        <div class="left col-7" id="contentBox">
+            <div class="box" id="viewerContainer">
+                <iframe src="{{embed_link}}" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                {% comment %} <iframe src="https://iitkgpacin-my.sharepoint.com/personal/abhinavreddy05_kgpian_iitkgp_ac_in/_layouts/15/Doc.aspx?sourcedoc={cdac0692-3c48-4ddb-962f-bfd23798029a}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" width="100%" height="100%" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe> {% endcomment %}
+            </div>
+            <button id="preview">
+                <span class="material-symbols-outlined">
+                    open_in_full
+                </span>
+            </button>
+            {% comment %} <div class="bottom">
+                <span class="col-10">
+                    <button class='button' id="prevButton">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                        Prev
+                    </button>
+                    <button class='button' id="nextButton">Next
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </span>
+                <button id="preview">
+                        <span class="material-symbols-outlined">
+                            open_in_full
+                        </span>
+                </button>
+            </div> {% endcomment %}
+        </div>
+        <div class="right col-4">
+            <h2>Juding Parameters</h2>
+            <div class="box">
+                <ul>
+                    {% for i in "123456789" %}
+                        <li class="parameters">
+                            <h3>Judging parameter {{ i }}</h3>
+                            <div class="slider">
+                                <input type="range" min="0" max="10" value="0" step="0.5" oninput="rangeValue{{i}}.innerText = this.value">
+                                <p id="rangeValue{{ i }}">0</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class=bottom>
+                <button class="nav" onclick="prev()">
+                    <span class="material-symbols-outlined">
+                        navigate_before
+                    </span>
+                </button>
+                <button class="pagination page" onclick="pageOne()">1</button>
+                <button class="pagination" onclick="pageTwo()">2</button>
+                <button class="pagination" onclick="pageThree()">3</button>
+                <button class="nav" onclick="nxt()">
+                    <span class="material-symbols-outlined">
+                        navigate_next
+                    </span>
+                </button>
+                <button class="action reset disabled">Reset</button>
+                <button class="action submit disabled" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>  
+      
+{% endblock content %}

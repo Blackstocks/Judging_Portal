@@ -17,9 +17,9 @@ urlpatterns = [
     path('participants', views.participants, name='judge_participants'),
 
     path('register/', user_views.register, name='judge_register'),
-    path('verify/', unauthenticated_user(user_views.VerifyOTP), name='judge_verify'),
+    path('verify/', user_views.VerifyOTP, name='judge_verify'),
 
-    path('login/', unauthenticated_user(auth_views.LoginView.as_view(template_name='customUser/login.html')), name='judge_login'),
+    path('login/', auth_views.LoginView.as_view(template_name='customUser/login.html'), name='judge_login'),
 
 ]
 

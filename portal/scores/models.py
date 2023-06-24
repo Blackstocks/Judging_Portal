@@ -12,7 +12,7 @@ class Score(models.Model):
     judge = models.ForeignKey(Judge, on_delete=models.CASCADE, null=True)
     parameters = JSONField(null=True, default=default_parameters)
     total = models.FloatField(default=0)
-    status = models.BooleanField(default=False)
+    # status = models.BooleanField(default=False)
 
     class Meta:
         unique_together = (('participant', 'judge'),)
@@ -21,7 +21,7 @@ class Score(models.Model):
         return f"{self.participant}, {self.judge}"
 
     def save(self, *args, **kwargs):
-        if not self.status:
+        # if not self.status:
             # Convert parameters to dictionary if it's stored as a string
             if isinstance(self.parameters, str):
                 self.parameters = json.loads(self.parameters)
@@ -31,6 +31,6 @@ class Score(models.Model):
 
             super().save(*args, **kwargs)
         
-        else:
-            raise ValidationError("No multiple modifications in score is allowed.")
+        # else:
+            # raise ValidationError("No multiple modifications in score is allowed.")
 

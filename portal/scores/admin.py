@@ -3,6 +3,8 @@ from django import forms
 from .models import Score
 
 class ScoreAdmin(admin.ModelAdmin):
+    list_display = ('participant','judge', 'total',)
+
     class Meta:
         model = Score
         fields = '__all__'
