@@ -32,7 +32,7 @@ def judge(request, participant_username):
     
         # Trigger the score creation
         judge = request.user.judge  # Assuming the logged-in user is a judge
-        create_score(request, participant, judge)
+        create_score(judge, participant)
         
         return render(request, 'dashboardJudge/judging.html', {'embed_link': embed_link})
     
@@ -56,7 +56,7 @@ def participants(request):
 @judge_required
 @login_required
 @csrf_exempt
-def create_score(request, participant_id, judge_id):
+def create_score_view(request, participant_id, judge_id):
     if request.method == 'POST':
         score_data = request.POST.dict()
 

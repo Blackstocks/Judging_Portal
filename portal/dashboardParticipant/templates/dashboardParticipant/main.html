@@ -13,11 +13,11 @@
 
     {% if  'dashboard' in request.path %} <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> {% endif %}
 
-    {% if  'judging' in request.path %} <link rel="stylesheet" href="{% static 'css/judging.css' %}"> {% endif %}
+    {% if  'result' in request.path %} <link rel="stylesheet" href="{% static 'css/result.css' %}"> {% endif %}
 
     {% if  'leaderboard' in request.path %} <link rel="stylesheet" href="{% static 'css/leaderboard.css' %}"> {% endif %}
 
-    {% if  'participants' in request.path %} <link rel="stylesheet" href="{% static 'css/participants.css' %}"> {% endif %}
+    {% if  'connect' in request.path %} <link rel="stylesheet" href="{% static 'css/connect.css' %}"> {% endif %}
 
     <!-- Hint CSS -->
     <link rel="stylesheet" href="{% static 'css/hint.base.css' %}" />
@@ -48,26 +48,16 @@
                             aria-label="Dashboard">
                             <span class="material-symbols-outlined">team_dashboard</span>
                             <span class="linktxt">Dashboard</span></a></li>
-                        {% comment %} <li><a href="{% url 'participant_participants' %}" {% url 'participant_participants' as url %}
+
+                        <li><a href="{% url 'participant_result' %}" {% url 'participant_result' as url %}
                                 {% if request.path == url %} class="active" {% endif %}
                                 aria-label="Participants">
                                 <span class="material-symbols-outlined">
-                                    groups
+                                    assignment_turned_in
                                 </span>
-                                <span class="linktxt">Participants</span></a>
-                        </li> {% endcomment %}
-                        {% comment %} <li>
-                            <a href="{% url 'judge_judge' participant_username='choose_participant' %}" 
-                            {% if 'judging' in request.path %}
-                                class="active"
-                            {% endif %} 
-                            aria-label="Judging Portal">
-                            <span class="material-symbols-outlined">
-                                gavel
-                            </span>
-                            <span class="linktxt">Judging Portal</span>
-                            </a>
-                        </li> {% endcomment %}
+                                <span class="linktxt">Result</span></a>
+                        </li>
+
                         <li><a href="{% url 'participant_leaderboard' %}" {% url 'participant_leaderboard' as url %}
                             {% if request.path == url %} class="active" {% endif %}
                             aria-label="Leaderboard">
@@ -75,6 +65,16 @@
                                 leaderboard
                             </span>
                             <span class="linktxt">Leaderboard</span></a></li>
+
+                        <li><a href="{% url 'participant_connect' %}" {% url 'participant_connect' as url %}
+                                {% if request.path == url %} class="active" {% endif %}
+                                aria-label="Participants">
+                                <span class="material-symbols-outlined">
+                                    groups
+                                </span>
+                                <span class="linktxt">Connect</span></a>
+                        </li>
+                        
                         <li><a href="{% url 'logout' %}?next={% url 'home' %}" aria-label="Log out">
                             <span class="material-symbols-outlined">logout</span>
                             <span class="linktxt">Log out</span></a></li>
